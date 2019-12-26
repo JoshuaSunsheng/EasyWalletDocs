@@ -1,0 +1,190 @@
+html, body {
+  height: 100%;
+  width: 100%;
+  font-family: "Monospaced Number", "Chinese Quote", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  overflow: hidden; }
+
+html, body, ul, li {
+  padding: 0;
+  margin: 0;
+  list-style: none; }
+
+::-webkit-scrollbar {
+  height: 8px;
+  width: 8px; }
+
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.15); }
+
+::-webkit-scrollbar-thumb {
+  background-color: #ddd;
+  outline: 1px solid #708090; }
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(0, 0, 0, 0.61);
+  outline: 1px solid #708090; }
+.col-red{ color: #ff0000;}
+.rows {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden; }
+
+.rows > div {
+  float: left;
+  box-sizing: border-box; }
+
+.pull-left {
+  width: 25%;
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto; }
+
+.pull-right {
+  width: 75%;
+  height: 100%; }
+
+.title-box {
+  color: #222;
+  font-size: 24px;
+  line-height: 1.5;
+  padding: 40px 16px 30px 40px;
+  transition: all .3s; }
+
+.nav-box {
+  border-right: 1px #ccc solid;
+  height: 100%; }
+
+.menu-box li {
+  position: relative;
+  transition: color 0.3s cubic-bezier(0.645, 0.045, 0.355, 1), border-color 0.3s cubic-bezier(0.645, 0.045, 0.355, 1), background 0.3s cubic-bezier(0.645, 0.045, 0.355, 1), padding 0.15s cubic-bezier(0.645, 0.045, 0.355, 1); }
+  .menu-box li a {
+    display: block;
+    transition: all .3s ease;
+    text-decoration: none;
+    color: #314659;
+    cursor: pointer;
+    line-height: 40px;
+    height: 40px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    padding-right: 15px;
+    padding-left: 20px; }
+    .menu-box li a:hover {
+      color: #1890ff; }
+  .menu-box li.submenu-hide span {
+    color: #999; }
+    .menu-box li.submenu-hide span:after {
+      transform: rotate(-180deg); }
+  .menu-box li span {
+    position: relative;
+    display: block;
+    line-height: 40px;
+    height: 40px;
+    padding: 0 15px 0 20px;
+    color: #314659;
+    cursor: pointer; }
+    .menu-box li span:after {
+      position: absolute;
+      top: 50%;
+      right: 15px;
+      margin-top: -12px;
+      width: 24px;
+      height: 24px;
+      content: '';
+      background: url("../images/arr.png") center no-repeat;
+      transition: all .2s; }
+  .menu-box li > ul > li > a {
+    padding-left: 40px; }
+  .menu-box li.selected {
+    background-color: #e6f7ff;
+    border-right: 3px #1890ff solid; }
+
+.content-box {
+  padding: 20px 15px 15px 15px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  height: 100%;
+  box-sizing: border-box; }
+
+.title-h1 {
+  color: #0d1a26;
+  font-weight: 500;
+  margin-bottom: 20px;
+  margin-top: 8px;
+  font-family: Avenir, "Monospaced Number", "Chinese Quote", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 30px;
+  font-variant: tabular-nums;
+  line-height: 38px; }
+
+pre {
+  display: block;
+  padding: 9.5px;
+  margin: 0 0 10px;
+  font-size: 13px;
+  line-height: 20px;
+  word-break: break-all;
+  word-wrap: break-word;
+  white-space: pre-wrap;
+  background-color: #f5f5f5;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px; }
+
+iframe {
+  border: 0;
+  width: 100%;
+  height: 100%; }
+
+@media (min-width: 1200px) {
+  .pull-left {
+    width: 20%; }
+
+  .pull-right {
+    width: 80%; }
+
+  .menu-box ul li a {
+    padding-left: 40px; }
+  .menu-box ul li span {
+    padding-left: 40px; }
+  .menu-box ul li ul > li > a {
+    padding-left: 80px; } }
+.tabs .tabs-title {
+  height: 35px;
+  border-bottom: 1px #cccccc solid; }
+.tabs .tabs-nav {
+  display: inline-block;
+  height: 100%;
+  margin: 0;
+  padding: 5px 16px;
+  text-align: center;
+  min-width: 80px;
+  box-sizing: border-box;
+  position: relative;
+  transition: color 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+  cursor: pointer;
+  text-decoration: none; }
+  .tabs .tabs-nav.selected {
+    color: #1890ff;
+    border-bottom: 2px #1890ff solid; }
+.tabs .tabs-item {
+  display: none;
+  padding: 8px 0; }
+
+.table-box {
+  width: 100%;
+  table-layout: fixed;
+  border-collapse: collapse; }
+  .table-box th {
+    background-color: #f7f7f7;
+    text-align: left; }
+  .table-box th, .table-box td {
+    border: 1px #e6e6e6 solid;
+    padding: 8px; }
+
+/*# sourceMappingURL=style.css.map */
+
+.newline{word-wrap:break-word;}
