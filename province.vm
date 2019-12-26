@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>省份代码表</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <link rel="stylesheet" href="css/style.css?2018">
+</head>
+
+<body>
+<div class="content-box">
+    <h1 class="title-h1">省份代码表
+    </h1>
+    <table class="table-box">
+        <thead>
+        <tr>
+            <th>省代码</th>
+            <th>省名称</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr><td>11</td><td>北京市</td></tr>
+        <tr><td>12</td><td>天津市</td></tr>
+        <tr><td>13</td><td>河北省</td></tr>
+        <tr><td>14</td><td>山西省</td></tr>
+        <tr><td>15</td><td>内蒙古自治区</td></tr>
+        <tr><td>21</td><td>辽宁省</td></tr>
+        <tr><td>22</td><td>吉林省</td></tr>
+        <tr><td>23</td><td>黑龙江省</td></tr>
+        <tr><td>31</td><td>上海市</td></tr>
+        <tr><td>32</td><td>江苏省</td></tr>
+        <tr><td>33</td><td>浙江省</td></tr>
+        <tr><td>34</td><td>安徽省</td></tr>
+        <tr><td>35</td><td>福建省</td></tr>
+        <tr><td>36</td><td>江西省</td></tr>
+        <tr><td>37</td><td>山东省</td></tr>
+        <tr><td>41</td><td>河南省</td></tr>
+        <tr><td>42</td><td>湖北省</td></tr>
+        <tr><td>43</td><td>湖南省</td></tr>
+        <tr><td>44</td><td>广东省</td></tr>
+        <tr><td>45</td><td>广西壮族自治区</td></tr>
+        <tr><td>46</td><td>海南省</td></tr>
+        <tr><td>50</td><td>重庆市</td></tr>
+        <tr><td>51</td><td>四川省</td></tr>
+        <tr><td>52</td><td>贵州省</td></tr>
+        <tr><td>53</td><td>云南省</td></tr>
+        <tr><td>54</td><td>西藏自治区</td></tr>
+        <tr><td>61</td><td>陕西省</td></tr>
+        <tr><td>62</td><td>甘肃省</td></tr>
+        <tr><td>63</td><td>青海省</td></tr>
+        <tr><td>64</td><td>宁夏回族自治区</td></tr>
+        <tr><td>65</td><td>新疆维吾尔自治区</td></tr>
+        <tr><td>81</td><td>香港特别行政区</td></tr>
+        <tr><td>82</td><td>澳门特别行政区</td></tr>
+
+        </tbody>
+    </table>
+
+</div>
+<script src="js/jquery.min.js"></script>
+<script src="js/all.js"></script>
+</body>
+</html>

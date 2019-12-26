@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>易生支付demo下载</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <link rel="stylesheet" href="css/style.css?2019">
+</head>
+
+<body>
+<div class="content-box">
+    <h1 class="title-h1">Demo说明</h1>
+    <h2>Demo说明</h2>
+    Demo程序已上传至GitHub，请自行下载，thankyou。<br>
+   	下载地址：<a href="https://github.com/conqueror-nie/EasyPayDemo.git">https://github.com/conqueror-nie/EasyPayDemo.git</a>
+
+</div>
+<script src="js/jquery.min.js"></script>
+<script src="js/all.js"></script>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<h2>公共请求参数</h2>
+<p><b>生产地址:</b> https://newpay.bhecard.com/api_gateway.do &nbsp;<b>测试地址:</b>
+    https://test_nucc.bhecard.com:9088/api_gateway.do </p>
+<table class="table-box">
+    <thead>
+    <tr>
+        <th>参数名称</th>
+        <th>参数</th>
+        <th>类型(长度)</th>
+        <th>是否必填</th>
+        <th>描述</th>
+        <th>示例值</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>接口名称</td>
+        <td>service</td>
+        <td>String</td>
+        <td>是</td>
+        <td>每个交易类型都不一样根据实际的交易类型设置
+        </td>
+        <td class="newline">$service</td>
+    </tr>
+    <tr>
+        <td>合作伙伴ID</td>
+        <td>partner</td>
+        <td>String(15)</td>
+        <td>是</td>
+        <td>合作伙伴在易生支付的用户ID，登录易生支付商户后台 商家服务查看商户编号</td>
+        <td>900029000000354</td>
+    </tr>
+    <tr>
+        <td>签名</td>
+        <td>sign</td>
+        <td>String</td>
+        <td>是</td>
+        <td class="newline">签名 根据指定的签名方法计算出来的签名 见3.1安全规范-签名机制</td>
+        <td class="newline">Nnki6qyFcWkbQJU+2802oYhiMoJ0rMbeFSF5sCGT0QuGTTgd8J6Xo0IdEnOsyqt4ZO78uQQdIbmc92Xnhy0ybcrX/YJHkuy+MNfzAACXp2Yr68zvvSMKMthW4Qi3+twqNExzhzGKy1iw2bOCnnWbv9MXKnkNFwr5NPoOXoGv3ag=</td>
+    </tr>
+    <tr>
+        <td>签名方式</td>
+        <td>sign_type</td>
+        <td>String</td>
+        <td>是</td>
+        <td class="newline">见签名方式，仅支持RSA。</td>
+        <td class="newline">RSA</td>
+    </tr>
+    <tr>
+        <td>字符编码</td>
+        <td>charset</td>
+        <td>String</td>
+        <td>是</td>
+        <td class="newline">签名时使用</td>
+        <td class="newline">UTF-8</td>
+    </tr>
+    <tr>
+        <td>业务请求数据</td>
+        <td>biz_content</td>
+        <td>String</td>
+        <td>是</td>
+        <td class="newline">业务请求数据 把具体的业务请求列表中的数据转换成json格式或者xml格式</td>
+        <td class="newline">{
+            "amount": 1,
+            "merchant_id": "999000000100001",
+            "sign_no": "1234",
+            "out_trade_no": "1231111456789"
+            }</td>
+    </tr>
+    </tbody>
+</table>

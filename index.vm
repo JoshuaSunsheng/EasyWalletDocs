@@ -35,72 +35,22 @@
                            <li><a  href="#/city" data-href="./city.htm" title="城市代码表">4.6城市代码表</a></li>
                            <li><a  href="#/mccType" data-href="./mccType.htm" title="行业类别表">4.7行业类别表</a></li>
                            <li><a  href="#/idnoType" data-href="./idnoType.htm" title="证件类型表">4.8证件类型表</a></li>
-                           <li><a  href="#/feeType" data-href="./fee_type.htm" title="费率类型表">4.9费率类型表</a></li>
-<!--                            <li><a  href="#/bankcodedirect" data-href="./bankcode.htm" title="直连银行代码表">3.5直连银行代码表</a></li> -->
                        </ul>
                    </li>
 
                    <li><a>5. 常见问题.</a></li>
                    <li class="tree-box"><span>6.现金账户</span>
                        <ul>
-                           <li><a href="#charge" data-href="./charge.htm" title="易生支付代扣充值">6.1易生支付代扣充值</a></li>
-                           <li><a href="#charge_query" data-href="./charge_query.htm" title="易生支付代扣充值查询">6.2易生支付代扣充值查询</a></li>
-                           <li><a href="#blocked" data-href="./blocked.htm" title="现金账户冻结">6.3现金账户冻结</a></li>
-                           <li><a href="#unblocked" data-href="./unblocked.htm" title="现金账户解冻扣款">6.4现金账户解冻扣款</a></li>
-                           <li><a href="#cancel" data-href="./cancel.htm" title="现金账户解冻">6.5现金账户解冻</a></li>
-                           <li><a href="#balanceStatusQuery" data-href="./balanceStatusQuery.htm" title="现金账户冻结(解冻)结果查询">6.6现金账户冻结(解冻)结果查询</a></li>
-                           <li><a href="#balance" data-href="./balance.htm" title="账户余额查询">6.7账户余额查询</a></li>
-                           <li><a href="#dsf_pay" data-href="./dsfPay/dsf_pay.htm" title="实时代付">6.8实时代付</a></li>
-                           <li><a href="#dsf_query" data-href="./dsfPay/dsf_query.htm" title="代付查询">6.9代付查询</a></li>
-                           <li><a href="#transfer_acc" data-href="./account/transferAcc.htm" title="现金账户转账">6.10现金账户转账</a></li>
-                           <li><a href="#transfer_acc_query" data-href="./account/transferAccQuery.htm" title="现金账户转账查询">6.11现金账户转账查询</a></li>
-                           <li><a href="#withdraw_acc" data-href="./account/withdrawAcc.htm" title="结算账户提现">6.12结算账户提现</a></li>
-                           <li><a href="#new_pay" data-href="./dsfPay/new_pay.htm" title="联机代付">6.13联机代付</a></li>
-                           <li><a href="#subAccCreate" data-href="./subAccCreate.htm" title="子账户开户">6.14子账户开户</a></li>
-                           <li><a href="#getSubAccId" data-href="./getSubAccId.htm" title="获取子账户ID">6.15获取子账户ID</a></li>
-                           <li><a href="#getSubAccBalance" data-href="./getSubAccBalance.htm" title="获取子账户余额">6.16获取子账户余额</a></li>
-                           <li><a href="#subAcc" data-href="./subAcc.htm" title="子账户分账">6.17子账户分账</a></li>
-                           <li><a href="#subAccWithdraw" data-href="./subAccWithdraw.htm" title="子账户提现">6.18子账户提现</a></li>
-                           <li><a href="#subAccQuery" data-href="./subAccQuery.htm" title="子账户订单查询">6.19子账户订单查询</a></li>
                        </ul>
                    </li>
                    
                    <li class="tree-box"><span>7.订单推送</span>
                        <ul>
-                           <li><a  href="#/pushOrder" data-href="./pushOrder.htm" title="合单支付-平台商户推单">7.1合单支付推单</a></li>
-                           <li><a  href="#/directPushOrder" data-href="./directPushOrder.htm" title="直连网银推单">7.2 直连网银推单</a></li>
-                           <li><a  href="#/validateAccount" data-href="./agreementPay/validateAccount.htm" title="协议支付">7.3 协议支付-账户认证</a></li>
-                           <li><a  href="#/agreementPayBind" data-href="./agreementPay/agreementPayBind.htm" title="协议支付">7.4 协议支付-账户签约</a></li>
-                           <li><a  href="#/agreementPay" data-href="./agreementPay/agreementPay.htm" title="协议支付">7.5 协议支付-支付</a></li>
-                           <li><a  href="#/qrcodePayPush" data-href="./qrcodePayPush.htm" title="二维码主扫支付">7.6 二维码主扫支付</a></li>
-                           <li><a  href="#/easyPayPushOrder" data-href="./easyPayPushOrder.htm" title="标准收银台推单">7.7 标准收银台推单</a></li>
-                            <li><a  href="#/jsPayPush" data-href="./jsPayPush.htm" title="公众号/网页内支付">7.8 公众号/网页内支付</a></li>
-                           <li><a  href="#/h5PushOrder" data-href="./h5PushOrder.htm" title="H5收银台推单">7.9 H5收银台推单</a></li>
-<!--                            <li><a  href="#/qrcodePayPush" data-href="./qrcodePayPush.htm" title="app支付">7.6 app支付</a></li> -->
-                            <li><a  href="#/agent_settlement" data-href="./agent_settlement.htm" title="平台商户担保支付">7.10 平台商户担保支付</a></li>
                        </ul>
                    </li>
 
-                   <li class="tree-box"><span>8.条码支付</span>
-                       <ul>
-                           <li><a  href="#/c2bBindCard" data-href="./c2b/c2bBindCard.htm" title="特约支付-绑卡">8.1 特约支付-绑卡</a></li>
-                           <li><a  href="#/c2bGetCode" data-href="./c2b/c2bGetCode.htm" title="特约支付-获取码">8.2 特约支付-获取码</a></li>
-                           <li><a  href="#/c2bPay" data-href="./c2b/c2bPay.htm" title="特约支付-支付">8.3 特约支付-支付(被扫)</a></li>
-                       </ul>
-                   </li>
-                   
                    <li class="tree-box"><span>9.快捷支付</span>
                        <ul>
-                           <li><a  href="#/nopagesSendSMS" data-href="./kjPay/nopagesSendSMS.htm" title="无跳转快捷-获取短信验证码">9.1无跳转快捷-获取短信验证码</a></li>
-                           <li><a  href="#/nopagesPay" data-href="./kjPay/nopagesPay.htm" title="无跳转快捷-支付">9.2无跳转快捷-支付(短信验证)</a></li>
-
-                           <li><a  href="#/directPayValidate" data-href="./kjPay/directPayValidate.htm" title="直接支付/认证支付-获取短信验证码">9.3认证支付-获取短信验证码</a></li>
-                           <li><a  href="#/directPay" data-href="./kjPay/directPay.htm" title="直接支付/认证支付-支付">9.4认证支付-支付</a></li>
-                           <li><a  href="#/nopagesOpenFront" data-href="./kjPay/nopagesOpenFront.htm" title="无跳转快捷-前台开通">9.5无跳转快捷-前台开通</a></li>
-                           <li><a  href="#/nopagesOpenQuery" data-href="./kjPay/nopagesOpenQuery.htm" title="无跳转快捷-开通查询">9.6无跳转快捷-开通查询</a></li>
-                           <li><a  href="#/nopagesDirectPay" data-href="./kjPay/nopagesDirectPay.htm" title="无跳转快捷-支付(无短信验证)">9.7无跳转快捷-支付(无短信验证)</a></li>
-                           <li><a  href="#/nopagesUnionSendSMS" data-href="./kjPay/nopagesUnionSendSMS.htm" title="无跳转快捷(银联侧标准版)-获取短信验证码">9.8无跳转快捷(银联侧标准版)-获取短信验证码</a></li>
-                           <li><a  href="#/kjDiscount" data-href="./kjPay/kjDiscount.htm" title="快捷特惠支付">9.9快捷特惠支付</a></li>
                        </ul>
                    </li>
 
@@ -119,67 +69,6 @@
                        	   <li><a  href="#/checkBill" data-href="./checkBill.htm" title="对账文件下载">11.1 对账文件下载</a></li>
                        </ul>
                    </li>
-                   <li class="tree-box"><span>12.商户入网</span>
-                       <ul>
-                           <li><a  href="#/addMerchant" data-href="./addMerchant.htm" title="商户基本信息入网">12.1 商户基本信息入网</a></li>
-                           <li><a  href="#/confirmMerchant" data-href="./confirmMerchant.htm" title="商户入网审批">12.2 商户入网审批</a></li>
-                           <li><a  href="#/addPhoto" data-href="./addPhoto.htm" title="商户照片上传">12.3 商户照片上传</a></li>
-                           <li><a  href="#/addFee" data-href="./addFee.htm" title="商户费率添加">12.4 商户费率添加</a></li>
-                           <li><a  href="#/stopFee" data-href="./stopFee.htm" title="商户费率停用">12.5 商户费率停用</a></li>
-                           <li><a  href="#/openPayType" data-href="./openPayType.htm" title="商户开通支付方式">12.6 商户开通支付方式</a></li>
-                       </ul>
-                   </li>
-
-                   <li class="tree-box"><span>13.鉴权</span>
-                       <ul>
-                       	   <li><a  href="#/authentication" data-href="./auth/authentication.htm" title="账户鉴权">13.1 三、四要素鉴权</a></li>
-                           <li><a  href="#/verifyFaceAndIdNoByCopSDK" data-href="./auth/verifyFaceAndIdNoByCop.htm" title="人证对比">13.2 人证对比</a></li>
-
-                           <li><a  href="#/verifyFaceAndIdNoByCopSDK" data-href="./auth/verifyFaceAndIdNoByCopSDK.htm" title="人证对比SDK">13.3 人证对比SDK</a></li>
-                           <li><a  href="#/verifyIdNoName" data-href="./auth/verifyIdNoName.htm" title="账户鉴权">13.4 二要素鉴权</a></li>
-                           <li><a  href="#/checkLiveness" data-href="./auth/checkLiveness.htm" title="活体检测">13.5 活体检测</a></li>
-                           <li><a  href="#/verifyFaceWithFace" data-href="./auth/verifyFaceWithFace.htm" title="人脸对比">13.6 人脸对比(两张照片)</a></li>
-                           <li><a  href="#/verifyHandholdIDcard" data-href="./auth/verifyHandholdIDcard.htm" title="人脸对比">13.7 人脸对比(手持身份证照)</a></li>
-
-                       </ul>
-                   </li>
-                   <li class="tree-box"><span>14.电子协议签约</span>
-                                        <ul>
-                                             <li><a href="#/protocolPreview" data-href="./eleCont/protocolPreview.htm" title="协议预览">14.1 协议预览</a></li>
-                                             <li><a href="#/sendSMS"  data-href="./eleCont/sendSMS.htm" title="发送短信">14.2 发送短信</a></li>
-                                             <li><a href="#/createContract" data-href="./eleCont/createContract.htm" title="创建协议">14.3 创建协议</a></li>
-                                            <li><a href="#/queryCont" data-href="./eleCont/queryCont.htm" title="查询协议">14.4 查询合同</a></li>
-                                            <li><a href="#/downloadCont" data-href="./eleCont/downloadCont.htm" title="下载协议">14.5 下载协议</a></li>
-                                         </ul>
-                                      </li>
-                   <li class="tree-box"><span>15.客户统一认证</span>
-                       <ul>
-                           <li><a  href="#/authmerchant_h5" data-href="./authmerchant_h5.htm" title="客户统一认证">15.1 客户统一认证</a></li>
-                           <li><a  href="#/changeMobile" data-href="./changeMobile.htm" title="用户更换手机号">15.2 用户更换手机号</a></li>
-                           <li><a  href="#/getUserInfo" data-href="./getUserInfo.htm" title="用户信息查询">15.3 用户信息查询</a></li>
-                           <li><a  href="#/bindCard" data-href="./bindCard.htm" title="用户绑卡">15.4 用户绑卡</a></li>
-                           
-                       </ul>
-                   </li>
-
-                   <li class="tree-box"><span>16.移动收银台</span>
-                       <ul>
-                           <li><a  href="#/cashier_h5" data-href="./cashier_h5.htm" title="移动收银台">16.1移动收银台使用</a></li>
-                           <li><a  href="#/cashier_h5weixinapp" data-href="./cashier_h5weixinapp.htm" title="H5收银台使用微信APP">16.2调用微信app支付</a></li>
-                           <li><a  href="#/cashier_h5minprogram" data-href="./cashier_h5minprogram.htm" title="APP调用微信小程序支付">16.3APP调用微信小程序支付</a></li>
-                       </ul>
-                   </li>
-                   #*<li class="tree-box"><span>17.接入方管理</span>
-                       <ul>
-                           <li><a  href="#/partner_ips_search" data-href="./partner/partner_ips_search.htm" title="接入方ip查询">17.1接入方ip查询</a></li>
-                           <li><a  href="#/partner_ips_change" data-href="./partner/partner_ips_change.htm" title="接入方ip更改">17.2接入方ip更改</a></li>
-                       </ul>
-                   </li>*#
-                  #*<li class="tree-box"><span>17.邮件管理</span>
-                       <ul>
-                           <li><a  href="#/mail_send" data-href="./mail/mail_send.htm" title="邮件发送">17.1邮件发送</a></li>
-                       </ul>
-                   </li>*#
                </ul>
            </div>
        </div>

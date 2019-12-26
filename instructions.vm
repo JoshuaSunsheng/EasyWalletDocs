@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="content-box">
+    <h1 class="title-h1">文档说明</h1>
+    <h2 style="font-weight: 500px;">阅读对象</h2>
+    <p>本文档适用于希望集成易生支付解决方案的应用程序开发人员。 实施此解决方案需要软件开发技能。 您必须编写使用API请求和答复字段的代码，将易生支付解决方案集成到您现有的订单管理系统中
+    </p>
+    <h2>业务术语</h2>
+    <table class="table-box">
+        <thead>
+        <tr>
+            <th>名词</th>
+            <th>说明</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>partner</td>
+            <td>商户与易生支付合作后在易生支付产生的商户ID</td>
+        </tr>
+        <tr>
+            <td>key</td>
+            <td>签约时分配给商户的key</td>
+        </tr>
+        <tr>
+            <td>service</td>
+            <td>是易生支付针对一些外部接口业务的名字</td>
+        </tr>
+        </tbody>
+    </table>
+
+    <h2 >文档规范</h2>
+    <p>(1)本文档中涉及的时间，和日期均为+8时区。<br>
+        (2)本文档中所有返回的时间格式均为 yyyy-MM-dd HH:mm:ss。<br>
+        (3)所有时间日期格式均为 yyyy-MM-dd。<br>
+        (4)本文档中没有特殊说明的情况下所有金额的单位均为分。<br> </p>
+    <h2>测试系统中测试参数</h2>
+    <pre>
+    partner=900029000000354
+    signKey(RSA商户私钥)=MIICeAIBADANBgkqhkiG9w0BAQEFAASCAmIwggJeAgEAAoGBAIqUuxd92eEBXVneDWhfNP6XCkLcGBO1YAulexKX+OdlfZzB/4NNHkOAQQy84k3ZgIUPIk5hewLbA+XGrk9Wih5HG3ZQeFugeoTcx3vwo7AQv7KnmcKEWFNlOr/EhB3JndmcQnBRsIRRdCP+7nobfBqU0jS8dnpcQX1AtBRZRnkfAgMBAAECgYAe+u70ansZ1Q9EduKycY5MWAHAPqnXRhXppJ3l4zmOqV6ye6Aef1ADsRlZuqQw2S3lESQPN7WjRskRRiBTtjn8Atul9YeC7+QirP1K8seUP5gKB4bcjlzzl1m5dmxldkptJAmdzwYn8PRTW0+tFVyEaD/B8hKGxij4Gew0e8bwCQJBAOboG3ttBESsG2cAtmP1MfKRTjVdY7qRMXzBybcAeobBbmgCQgybVXXgjbGai+qwrQqcVRIp6p1yDWTZxVSuDWsCQQCZpBhcayOCMZR6F8dQJSuSSSIJw/GGN7IXfMYIqLxA2oGzlQ0B1DffOUe2wrid+WdpLuYCz2LYPQHDEgYM1dwdAkEAnfwhEYm9ad73wLnUEQAqdHTGtex316aP3XQZt4Q0UQ73o2IoHsgI6OYDDIlZQfIv8xqTeiIDzEXEtEPrp8yOkQJBAIWAzFZKFqHD2UO6M8vVcKX9fGFF7TH2ZX75Qc82Z9ZmyDs2sgW71QzX5hPN4cQLeqswQFeCw14orMZHfBBdKJUCQQDiWYk85okRugsWtxeJFhMEt2oUT+Kd8Yz5Aiz3J9XIS+zWtJrFlv+hXkVedPJ3xtBF32DZrCbxDn3UjXipRaCP
+    easy_public_key(RSA易生公钥)=MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQC2WTfvas1JvvaRuJWIKmKlBLmkRvr2O7Fu3k/zvhJs+X1JQorPWq/yZduY6HKu0up7Qi3T6ULHWyKBS1nRqhhHpmLHnI3sIO8E/RzNXJiTd9/bpXMv+H8F8DW5ElLxCIVuwHBROkBLWS9fIpslkFPt+r13oKFnuWhXgRr+K/YkJQIDAQAB
+    DES_ENCODE_KEY(身份证,银行卡信息如需加密时使用)=CueaiPrW9sIskbn9qkoPh9J3
+    merchant_id=900029000000354
+    seller_email=13601470343@qq.com
+    网支推送地址: https://test_nucc.bhecard.com:9088/api_gateway.do
+    门户访问地址: https://test_nucc.bhecard.com:9088/member/uredirect.htm 用户名:13601470343@qq.com 密码: 111111
+    门户点击代理商服务登录，提供查询订单，补单，补通知等功能.
+           </pre>
+
+    <h2>生产系统中测试参数</h2>
+    <pre>
+    partner=900029000000354
+    signKey(RSA商户私钥)=MIICeAIBADANBgkqhkiG9w0BAQEFAASCAmIwggJeAgEAAoGBALLfMUbf4u8uDSeG0WR//LSvxv7qglKsHwws3mpyqUWJau1ZXcfMeNQf+OhGTFrKsyP1WS3kXa1ZErjIhdeX5Jq2TphgXWZ+HdNVtd/rmHo84cjHJZOOBSvSmVYzqsJT253LoX1ip2sx/zbobU+Sm//4I5Zo4/yuufWBElCL2cuPAgMBAAECgYEApkJ3Fx27Xf48E+VodDXSulA4c3GeuSFrqnF6Ow9g71WPohZS6QfRt7oQLjZJeoq2gFHpFpMRz7LfiAo6/e4deXEWtMRg4UHcZbdBlTR4oM8au1TTEq446VhllSNZ8qeHxL4zO4peVDNupp8rElOMTXiQLKOph+fioLi++tvqZGECQQDrvtI3QD68BEQXlwMcUHkczppTs3Gxtd5uElQ7BQCTpM1fBhFIzv+TNxhNLGo5+2z1MKjWNE1KBo1ZXZnJdSfLAkEAwj1ykXJkYWbNrTRGzh0ZjSg784c20TeEl2HZ4BvSdCwSRxZUdZYx4x6MUWISlnokaifXSJhnsU9vXoZR4xEKzQJBAN5SJdNfLgqIB2Mr0g4owh7tpFLdPpJ2Tl8FwBOswv96AwfjI/fC5vmBktRs13z45KdSjVb9Ggp+pVyqzfZUGwMCQGdPWWVEq2Em1ZQe7t3nmlR6ptBTBXPnjG0bzU8mXRwO6LXIial09hmvgMA0YmCInF+dyyJAdT5YWoqy9FDKGq0CQQCBstxGn3LUWcGxEmTtmDt3pkHVy2IYQl/xFCgWYW1xIrC7dO8GfLZLzUbq/yBGO1KCRaQpFYKbJNTETB0TlKSY
+     easy_public_key(RSA易生公钥)=MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQC2WTfvas1JvvaRuJWIKmKlBLmkRvr2O7Fu3k/zvhJs+X1JQorPWq/yZduY6HKu0up7Qi3T6ULHWyKBS1nRqhhHpmLHnI3sIO8E/RzNXJiTd9/bpXMv+H8F8DW5ElLxCIVuwHBROkBLWS9fIpslkFPt+r13oKFnuWhXgRr+K/YkJQIDAQAB
+    DES_ENCODE_KEY(身份证,银行卡信息如需加密时使用)=s6yaiIycSFXufo4jEg3VmLs4
+    merchant_id=900029000000354
+    seller_email=13601470343@qq.com
+    网支推送地址: https://newpay.bhecard.com/api_gateway.do
+    门户访问地址: https://easypay.bhecard.com/member/uredirect.htm 用户名:13601470343@qq.com 密码: 111111
+    门户点击代理商服务登录，提供查询订单，补单，补通知等功能.
+           </pre>
+    <h2>接口开发指南</h2>
+
+    <table class="table-box">
+        <tr>
+            <th>快捷支付</th>
+            <th>支付方式说明</th>
+            <th>对应接口文档</th>
+        </tr>
+
+        <tr>
+            <td>1.银联侧无跳转接口(无短验)</td>
+            <td>开通在银联页面，支付时无需短信，开通过的卡可直接支付。</td>
+            <td><a  href="#/nopagesOpenFront" data-href="./kjPay/nopagesOpenFront.htm" title="无跳转快捷-前台开通">9.5无跳转快捷-前台开通</a><br>
+                <a  href="#/nopagesOpenQuery" data-href="./kjPay/nopagesOpenQuery.htm" title="无跳转快捷-开通查询">9.6无跳转快捷-开通查询</a><br>
+                <a  href="#/nopagesDirectPay" data-href="./kjPay/nopagesDirectPay.htm" title="无跳转快捷-支付(无短信验证)">9.7无跳转快捷-支付(无短信验证)</a><br>
+            </td>
+        </tr>
+
+        <tr>
+            <td>2.银联侧无跳转接口(标准版)(有短验)</td>
+            <td>银联侧标准版，支付时需短信。支付前通过开通查询，判断卡有没有开通，如果开通过就调获取短信验证码，然后进行支付。如果没开通就需要先进行开通然后再支付。</td>
+            <td>
+                <li><a  href="#/nopagesOpenFront" data-href="./kjPay/nopagesOpenFront.htm" title="无跳转快捷-前台开通">9.5无跳转快捷-前台开通</a></li>
+                <li><a  href="#/nopagesOpenQuery" data-href="./kjPay/nopagesOpenQuery.htm" title="无跳转快捷-开通查询">9.6无跳转快捷-开通查询</a></li>
+                <li><a  href="#/nopagesSendSMS" data-href="./kjPay/nopagesUnionSendSMS.htm" title="无跳转快捷(银联侧标准版)-获取短信验证码">9.8无跳转快捷(银联侧标准版)-获取短信验证码</a></li>
+                <li><a  href="#/nopagesPay" data-href="./kjPay/nopagesPay.htm" title="无跳转快捷-支付">9.2无跳转快捷-支付(短信验证)</a></li>
+            </td>
+        </tr>
+
+        <tr>
+            <td>3.银联商户侧快捷(全渠道)-(token)-纯接口</td>
+            <td>账户(卡号)认证，账户(卡号)签约，后获取token用token进行支付，支付时无需短信。</td>
+            <td> <a  href="#/validateAccount" data-href="./agreementPay/validateAccount.htm" title="协议支付">7.3 协议支付-账户认证</a><br>
+                <a  href="#/agreementPayBind" data-href="./agreementPay/agreementPayBind.htm" title="协议支付">7.4 协议支付-账户签约</a><br>
+                <a  href="#/agreementPay" data-href="./agreementPay/agreementPay.htm" title="协议支付">7.5 协议支付-支付</a><br>
+            </td>
+        </tr>
+
+        <tr>
+            <td>4.银联新无卡-直接支付</td>
+            <td>没有绑卡操作，每次支付要输全要素，卡号，cvv等，无短信验证。</td>
+            <td>   <li><a  href="#/directPayValidate" data-href="./kjPay/directPayValidate.htm" title="直接支付/认证支付-获取短信验证码">9.3认证支付-获取短信验证码</a></li>
+                <li><a  href="#/directPay" data-href="./kjPay/directPay.htm" title="直接支付/认证支付-支付">9.4认证支付-支付</a></li>
+            </td>
+        </tr>
+
+        <tr>
+            <td>5.银联网关快捷(可以支持传卡号)</td>
+            <td>交易跳转银联界面，直接输入银行卡号等交易要素，完成支付，支持PC端，和手机端。</td>
+            <td><a  href="#/directPushOrder" data-href="./directPushOrder.htm" title="直连网银推单">7.2 直连网银推单</a><br>
+                <a  href="#/easyPayPushOrder" data-href="./easyPayPushOrder.htm" title="标准收银台推单">7.7 标准收银台推单</a><br>
+                <a href="#/cashier_h5" data-href="./cashier_h5.htm" title="移动收银台">16.1移动收银台使用</a>
+            </td>
+        </tr>
+
+        <tr>
+            <td>6.银联商户侧快捷（全渠道）（标准版）-纯接口</td>
+            <td>交易传输用户卡号等要素。 开通，支付，都是接口方式，需要短信验证。</td>
+            <td> <li><a  href="#/nopagesSendSMS" data-href="./kjPay/nopagesSendSMS.htm" title="无跳转快捷-获取短信验证码">9.1无跳转快捷-获取短信验证码</a></li>
+                <li><a  href="#/nopagesPay" data-href="./kjPay/nopagesPay.htm" title="无跳转快捷-支付">9.2无跳转快捷-支付(短信验证)</a></li>
+            </td>
+        </tr>
+
+        <tr>
+            <td>7.银联新无卡-纯接口,新无卡-协议支付</td>
+            <td>支付机构入网，不需要逐商户入网。</td>
+            <td><a  href="#/validateAccount" data-href="./agreementPay/validateAccount.htm" title="协议支付">7.3 协议支付-账户认证</a><br>
+                <a  href="#/agreementPayBind" data-href="./agreementPay/agreementPayBind.htm" title="协议支付">7.4 协议支付-账户签约</a><br>
+                <a  href="#/agreementPay" data-href="./agreementPay/agreementPay.htm" title="协议支付">7.5 协议支付-支付</a><br></td>
+        </tr>
+
+        <tr>
+            <td>8.网联协议支付-纯接口</td>
+            <td>用户提供姓名、身份证号、银行卡号、手机号+验证码，支付公司将这些用户身份信息传给银行鉴权，如果鉴权成功，则会给该用户生成一个协议编号。
+                生成协议编号之后，扣款只需上送该协议编</td>
+            <td><a  href="#/validateAccount" data-href="./agreementPay/validateAccount.htm" title="协议支付">7.3 协议支付-账户认证</a><br>
+                <a  href="#/agreementPayBind" data-href="./agreementPay/agreementPayBind.htm" title="协议支付">7.4 协议支付-账户签约</a><br>
+                <a  href="#/agreementPay" data-href="./agreementPay/agreementPay.htm" title="协议支付">7.5 协议支付-支付</a><br></td>
+        </tr>
+
+    </table>
+
+    <br>
+    <table class="table-box">
+        <tr>
+            <th>银联云闪付</th>
+            <th>支付方式说明</th>
+            <th>对应接口文档</th>
+        </tr>
+        <tr>
+            <td>1.银联二维码支付（线上主扫）</td>
+            <td>银联二维码主扫支付。</td>
+            <td><a  href="#/qrcodePayPush" data-href="./qrcodePayPush.htm" title="二维码主扫支付">7.6 二维码主扫支付</a>
+                <br>
+                <a  href="#/easyPayPushOrder" data-href="./easyPayPushOrder.htm" title="标准收银台推单">7.7 标准收银台推单</a></td>
+        </tr>
+        <tr>
+            <td>2.银联C2B线下被扫支付(云闪付被扫)</td>
+            <td>云闪付被扫支付。</td>
+            <td> <a  href="#/c2bBindCard" data-href="./c2b/c2bBindCard.htm" title="特约支付-绑卡">8.1 特约支付-绑卡</a><br>
+                <a  href="#/c2bGetCode" data-href="./c2b/c2bGetCode.htm" title="特约支付-获取码">8.2 特约支付-获取码</a><br>
+                <a  href="#/c2bPay" data-href="./c2b/c2bPay.htm" title="特约支付-支付">8.3 特约支付-支付(被扫)</a>
+            </td>
+        </tr>
+    </table>
+
+    <br>
+    <table class="table-box">
+        <tr>
+            <th>网关</th>
+            <th>支付方式说明</th>
+            <th>对应接口文档</th>
+        </tr>
+        <tr>
+            <td>1.个人网银支付</td>
+            <td>PC端使用的，登录个人网银支付。</td>
+            <td><a  href="#/directPushOrder" data-href="./directPushOrder.htm" title="直连网银推单">7.2 直连网银推单</a><br>
+                <a  href="#/easyPayPushOrder" data-href="./easyPayPushOrder.htm" title="标准收银台推单">7.7 标准收银台推单</a></td>
+        </tr>
+        <tr>
+            <td>2.企业网银支付</td>
+            <td>企业网银支付。</td>
+            <td><a  href="#/directPushOrder" data-href="./directPushOrder.htm" title="直连网银推单">7.2 直连网银推单</a><br>
+                <a  href="#/easyPayPushOrder" data-href="./easyPayPushOrder.htm" title="标准收银台推单">7.7 标准收银台推单</a></td>
+        </tr>
+    </table>
+
+    <br>
+    <table class="table-box">
+        <tr>
+            <th>微信支付</th>
+            <th>支付方式说明</th>
+            <th>对应接口文档</th>
+        </tr>
+        <tr>
+            <td>1.微信二维码（线上主扫）</td>
+            <td>PC端使用，打开微信扫一扫，扫码支付。</td>
+            <td><a  href="#/qrcodePayPush" data-href="./qrcodePayPush.htm" title="二维码主扫支付">7.6 二维码主扫支付</a><br>
+                <a  href="#/easyPayPushOrder" data-href="./easyPayPushOrder.htm" title="标准收银台推单">7.7 标准收银台推单</a></td>
+        </tr>
+        <tr>
+            <td>2.微信APP</td>
+            <td>原生的APP支付。</td>
+            <td><a href="#/cashier_h5" data-href="./cashier_h5.htm" title="移动收银台">16.1移动收银台使用</a><br>
+              <a href="#/cashier_h5weixinapp" data-href="./cashier_h5weixinapp.htm" title="H5收银台使用微信APP">16.2调用微信app支付</a>
+            </td>
+        </tr>
+        <tr>
+            <td>3.微信小程序支付</td>
+            <td>H5收银台。小程序支付7.8</td>
+            <td> <li><a  href="#/cashier_h5minprogram" data-href="./cashier_h5minprogram.htm" title="APP调用微信小程序支付">16.3APP调用微信小程序支付</a></li>
+                <li><a  href="#/jsPayPush" data-href="./jsPayPush.htm" title="公众号/网页内支付">7.8 公众号/网页内支付</a></li>
+            </td>
+        </tr>
+        <tr>
+            <td>4.微信公众号支付</td>
+            <td>微信公众号支付</td>
+            <td> <li><a  href="#/jsPayPush" data-href="./jsPayPush.htm" title="公众号/网页内支付">7.8 公众号/网页内支付</a></li>
+            </td>
+        </tr>
+
+        <tr>
+            <td>5.微信二维码（线下被扫）</td>
+            <td>POS端使用，客户打开微信付款码，扫描枪扫码支付。线下。</td>
+            <td><li><a  href="#/c2bPay" data-href="./c2b/c2bPay.htm" title="特约支付-支付">8.3 特约支付-支付(被扫)</a></li></td>
+        </tr>
+
+    </table>
+
+    <br>
+    <table class="table-box">
+        <tr>
+            <th>支付宝</th>
+            <th>支付方式说明</th>
+            <th>对应接口文档</th>
+        </tr>
+        <tr>
+            <td>1.支付宝二维码（线上主扫）</td>
+            <td>支付宝生成二维码，扫码支付</td>
+            <td><a  href="#/qrcodePayPush" data-href="./qrcodePayPush.htm" title="二维码主扫支付">7.6 二维码主扫支付</a>
+                <br><a href="#/cashier_h5" data-href="./cashier_h5.htm" title="移动收银台">16.1移动收银台使用</a></td>
+        </tr>
+        <tr>
+            <td>2.支付宝服务窗支付</td>
+            <td>支付宝服务窗支付</td>
+            <td> <li><a  href="#/jsPayPush" data-href="./jsPayPush.htm" title="公众号/网页内支付">7.8 公众号/网页内支付</a></li>
+            </td>
+        </tr>
+        <tr>
+            <td>3.支付宝二维码（线下被扫）</td>
+            <td>POS端使用，客户打开支付宝付款码，扫描枪扫码支付。线下。</td>
+            <td><li><a  href="#/c2bPay" data-href="./c2b/c2bPay.htm" title="特约支付-支付">8.3 特约支付-支付(被扫)</a></li></td>
+        </tr>
+    </table>
+
+    <br>
+    <table class="table-box">
+        <tr>
+            <th>出款</th>
+            <th>支付方式说明</th>
+            <th>对应接口文档</th>
+        </tr>
+        <tr>
+            <td>接口联机代付</td>
+            <td>纯接口代付。</td>
+            <td><li><a href="#balance" data-href="./balance.htm" title="账户余额查询">6.7账户余额查询</a></li>
+                <li><a href="#dsf_query" data-href="./dsfPay/dsf_query.htm" title="代付查询">6.9代付查询</a></li>
+                <li><a href="#new_pay" data-href="./dsfPay/new_pay.htm" title="联机代付">6.13联机代付</a></li>
+            </td>
+        </tr>
+    </table>
+
+
+    <p>Note包含有用的建议或重要说明，以成功与易生支付整合</p>
+
+    <h2>联系我们</h2>
+    <p>任何技术问题，技术支持团队: 任何非技术问题，业务团队:</p>
+
+
+    <h2>版本修改记录</h2>
+    <table class="table-box">
+        <tr>
+            <th>版本号</th>
+            <th>修改类型</th>
+            <th>修改类型、原因及说明</th>
+            <th>修改人</th>
+            <th>修改生效日期</th>
+        </tr>
+
+        <tr>
+            <td>V4.0</td>
+            <td>12.1.商户基本信息入网</td>
+            <td>增加12.1.商户基本信息入网</td>
+            <td>潘海山</td>
+            <td>2019-05-20</td>
+        </tr>
+        
+        <tr>
+            <td>V4.0</td>
+            <td>12.2.商户入网审批</td>
+            <td>增加12.2.商户入网审批</td>
+            <td>潘海山</td>
+            <td>2019-05-20</td>
+        </tr>
+
+        <tr>
+            <td>V4.0</td>
+            <td>12.3.商户照片上传</td>
+            <td>增加12.3.商户照片上传口</td>
+            <td>黄昌可</td>
+            <td>2019-05-20</td>
+        </tr>
+
+        <tr>
+            <td>V4.0</td>
+            <td>12.4.商户手续费率添加</td>
+            <td>增加12.4.商户手续费率添加</td>
+            <td>黄昌可</td>
+            <td>2019-05-20</td>
+        </tr>
+
+        <tr>
+            <td>V4.0</td>
+            <td>12.5.商户手续费率停用</td>
+            <td>增加12.5.商户手续费率停用</td>
+            <td>黄昌可</td>
+            <td>2019-05-20</td>
+        </tr>
+        <tr>
+            <td>V4.0</td>
+            <td>6.13.联机代付</td>
+            <td>增加6.13.联机代付，支持异步成功通知。</td>
+            <td>黄昌可</td>
+            <td>2019-07-20</td>
+        </tr>
+    </table>
+
+</div>
+<script src="js/jquery.min.js"></script>
+<script src="js/all.js"></script>
+</body>
+</html>

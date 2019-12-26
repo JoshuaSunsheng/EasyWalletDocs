@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>安全规范</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <link rel="stylesheet" href="css/style.css?2018">
+</head>
+
+<body>
+<div class="content-box">
+    <h1 class="title-h1">安全规范</h1>
+    <h2>签名数据</h2>
+    数据签名 数据传输过程中的数据真实性和完整性，我们需要对数据进行数字签名，在接收签名数据之后进行签名校验。<br>
+    <p style="color: red;">签名时只对biz_content一个字段进行签名</p><br>
+    例如：<br>
+    RSA： 对字符串biz_content的json型字符串直接做RSA签名， 如{"merchant_id":"900029000002554","seller_email":"18679106330@gmail.com","amount":"1","business_time":"2017-12-07 15:35:00","notify_url":"https://www.baidu.com","order_desc":"Echannell","out_trade_no":"demo1552033418615","sign_no":"EP0000000169","channel_type":7}
+
+    <h2>签名机制</h2>
+    如果sign_type 为RSA时，使用的签名算法为SHA1WithRSA<br>
+    如果sign_type是MD5,SHA1,SHA2.签名秘钥直接加在biz_content后面，然后做对应的散列算法。<br>
+    <h2>签名方式</h2>
+    按照sign_type参数指定的签名算法对待签名数据进行签名。目前仅支持RSA,MD5,SHA1,SHA2.<br>
+    <h2>报文组装</h2>
+    <p style="color: red;">将 公共请求参数 拼接成key=value&key=value的字符串 并且做urlencoding</p>
+    <p>订单查询请求样例：</p>
+    <div class="tabs-item">
+	   	<pre>sign=YxADQjJqgMjChfECBdQbDV5rQpnY4nPu1aVWhADJvxMC0dIYnyBiebExMi9mvtvIzqm0%2BsgPuFL0lvNqf5lwl%2BS7ot%2BXtnUcsuhDFxA0Jkd%2BXQ%2BNDIZVB%2B9XlLBs%2B1Lwue5dm2zvlSZkurIfqJtgLOtm1F3yZLLrr2sObG5YVbM%3D&charset=UTF-8&biz_content=%7B%22merchant_id%22%3A%22900029000002554%22%2C%22out_trade_no%22%3A%2220190417c2bPay1555489983807%22%7D&partner=900029000000354&sign_type=RSA&service=easypay.merchant.query
+	    </pre>
+    </div>
+    <p></p><br><br>
+</div>
+<script src="js/jquery.min.js"></script>
+<script src="js/all.js"></script>
+</body>
+</html>
